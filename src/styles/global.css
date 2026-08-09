@@ -1,0 +1,62 @@
+:root {
+  /* Palette */
+  --maroon-950: #34050f;
+  --maroon-800: #5c0a1e;
+  --maroon-700: #7a0f28;
+  --maroon-600: #93142f;
+  --gold-600: #a9791a;
+  --gold-500: #c9a227;
+  --gold-300: #e8c766;
+  --gold-100: #f7e9c0;
+  --ivory: #fbf3e7;
+  --ink: #2a1810;
+  --ink-soft: #6b4a3f;
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-label: 'Marcellus', 'Georgia', serif;
+  --font-body: 'Manrope', -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--maroon-950);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
