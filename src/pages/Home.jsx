@@ -5,7 +5,7 @@ import CornerOrnament from '../components/CornerOrnament.jsx'
 import DiamondDivider from '../components/DiamondDivider.jsx'
 import './Home.css'
 
-const SHOP_NAME = 'Shri Jewellers'
+const SHOP_NAME = 'Shri Saoji Jewellars'
 
 function formatRupees(value) {
   if (value === undefined || value === null || value === '') return '—'
