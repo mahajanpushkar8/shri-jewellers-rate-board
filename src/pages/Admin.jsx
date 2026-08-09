@@ -11,7 +11,7 @@ export default function Admin() {
   const [password, setPassword] = useState('')
   const [loginError, setLoginError] = useState('')
 
-  const [form, setForm] = useState({ gold24k: '', gold22k: '', gold18k: '', silverPerGram: '' })
+  const [form, setForm] = useState({ gold24k: '', gold24plus: '', gold20k: '', silverPerGram: '' })
   const [saving, setSaving] = useState(false)
   const [saveState, setSaveState] = useState(null) // null | 'ok' | 'error'
   const [loadedOnce, setLoadedOnce] = useState(false)
@@ -23,8 +23,8 @@ export default function Admin() {
       const data = snapshot.val() || {}
       setForm({
         gold24k: data.gold?.['24k'] ?? '',
-        gold22k: data.gold?.['22k'] ?? '',
-        gold18k: data.gold?.['18k'] ?? '',
+        gold24plus: data.gold?.['24+'] ?? '',
+        gold20k: data.gold?.['20k'] ?? '',
         silverPerGram: data.silver?.perGram ?? '',
       })
       setLoadedOnce(true)
@@ -62,8 +62,8 @@ export default function Admin() {
       await update(ref(db, '/'), {
         gold: {
           '24k': form.gold24k === '' ? null : Number(form.gold24k),
-          '22k': form.gold22k === '' ? null : Number(form.gold22k),
-          '18k': form.gold18k === '' ? null : Number(form.gold18k),
+          '24+': form.gold24plus === '' ? null : Number(form.gold24plus),
+          '20k': form.gold20k === '' ? null : Number(form.gold20k),
         },
         silver: {
           perGram: silverPerGram,
@@ -134,26 +134,26 @@ export default function Admin() {
                 />
               </label>
               <label className="admin-field">
-                <span>22K</span>
+                <span>24+</span>
                 <input
                   type="number"
                   inputMode="decimal"
                   min="0"
                   step="1"
-                  value={form.gold22k}
-                  onChange={handleChange('gold22k')}
+                  value={form.gold24plus}
+                  onChange={handleChange('gold24plus')}
                   required
                 />
               </label>
               <label className="admin-field">
-                <span>18K</span>
+                <span>20K</span>
                 <input
                   type="number"
                   inputMode="decimal"
                   min="0"
                   step="1"
-                  value={form.gold18k}
-                  onChange={handleChange('gold18k')}
+                  value={form.gold20k}
+                  onChange={handleChange('gold20k')}
                   required
                 />
               </label>
