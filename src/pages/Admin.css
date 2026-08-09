@@ -162,3 +162,17 @@
     grid-template-columns: 1fr;
   }
 }
+.admin-textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d9c9a8;
+  background: #fff;
+  resize: vertical;
+}
+
+.admin-textarea:focus {
+  border-color: var(--gold-500);
+}

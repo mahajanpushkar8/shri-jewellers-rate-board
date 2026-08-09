@@ -3,10 +3,14 @@ import { ref, onValue } from 'firebase/database'
 import { db } from '../firebase.js'
 import CornerOrnament from '../components/CornerOrnament.jsx'
 import DiamondDivider from '../components/DiamondDivider.jsx'
+import { WhatsAppIcon, InstagramIcon } from '../components/SocialIcons.jsx'
 import './Home.css'
 
-const SHOP_NAME = 'श्री सावजी ज्वेलर्स'
-const GRAMS_PER_TOLA = 11.6638
+const SHOP_NAME = 'PNS श्री सावजी ज्वेलर्स'
+const SHOP_ADDRESS = 'डी पी रोड, BOI च्या खाली, चिखली (PH :879342285)'
+const WHATSAPP_LINK = 'https://wa.me/918793422585'
+const INSTAGRAM_LINK = 'https://www.instagram.com/pns_shwetang_saoji_sonar?igsh=MXJwYzUyajcwM2lmYw=='
+const GRAMS_PER_TOLA = 10
 
 function formatRupees(value) {
   if (value === undefined || value === null || value === '') return '—'
@@ -57,9 +61,31 @@ export default function Home() {
     <div className="board-page">
       <div className="board-page__glow" aria-hidden="true" />
 
+      <div className="board-social" aria-label="Contact links">
+        <a
+          className="board-social__icon"
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Message us on WhatsApp"
+        >
+          <WhatsAppIcon />
+        </a>
+        <a
+          className="board-social__icon"
+          href={INSTAGRAM_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit our Instagram"
+        >
+          <InstagramIcon />
+        </a>
+      </div>
+
       <header className="board-header">
         <p className="board-header__eyebrow">Est. Trust · Since Generations</p>
         <h1 className="board-header__name">{SHOP_NAME}</h1>
+        <p className="board-header__address">{SHOP_ADDRESS}</p>
         <p className="board-header__tagline">Today's Bullion Rate</p>
       </header>
 
@@ -81,21 +107,21 @@ export default function Home() {
           </h2>
           <div className="purity-grid">
             <div className="purity-cell">
-              <span className="purity-cell__label">24K</span>
+              <span className="purity-cell__label">24K S</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
                 {formatRupees(gold['24k'])}
               </span>
             </div>
             <div className="purity-cell purity-cell--emphasis">
-              <span className="purity-cell__label">24+</span>
+              <span className="purity-cell__label">24K G+</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
                 {formatRupees(gold['24+'])}
               </span>
             </div>
             <div className="purity-cell">
-              <span className="purity-cell__label">20K</span>
+              <span className="purity-cell__label">20K S</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
                 {formatRupees(gold['20k'])}
@@ -143,7 +169,9 @@ export default function Home() {
         </footer>
       </main>
 
-      <p className="board-page__note">Rates are indicative and exclude making charges &amp; GST.</p>
+      {rates?.note && <p className="board-page__custom-note">{rates.note}</p>}
+
+<p className="board-page__note">Rates are indicative and exclude making charges &amp; GST.</p>
     </div>
   )
 }
