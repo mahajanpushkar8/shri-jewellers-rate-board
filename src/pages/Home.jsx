@@ -5,7 +5,7 @@ import CornerOrnament from '../components/CornerOrnament.jsx'
 import DiamondDivider from '../components/DiamondDivider.jsx'
 import './Home.css'
 
-const SHOP_NAME = 'Shri Saoji Jewellars'
+const SHOP_NAME = 'श्री सावजी ज्वेलर्स'
 
 function formatRupees(value) {
   if (value === undefined || value === null || value === '') return '—'
@@ -87,17 +87,17 @@ export default function Home() {
               </span>
             </div>
             <div className="purity-cell purity-cell--emphasis">
-              <span className="purity-cell__label">22K</span>
+              <span className="purity-cell__label">24+</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
-                {formatRupees(gold['22k'])}
+                {formatRupees(gold['24+'])}
               </span>
             </div>
             <div className="purity-cell">
-              <span className="purity-cell__label">18K</span>
+              <span className="purity-cell__label">20k</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
-                {formatRupees(gold['18k'])}
+                {formatRupees(gold['20k'])}
               </span>
             </div>
           </div>
@@ -109,19 +109,26 @@ export default function Home() {
           <h2 id="silver-heading" className="metal-section__title metal-section__title--silver">
             Silver
           </h2>
-          <div className="purity-grid purity-grid--two">
+          <div className="purity-grid">
             <div className="purity-cell">
-              <span className="purity-cell__label">Per gram</span>
-              <span className="purity-cell__value purity-cell__value--silver">
+              <span className="purity-cell__label">per gram</span>
+              <span className="purity-cell__value">
                 <span className="rupee">₹</span>
-                {formatRupees(silver.perGram)}
+                {formatRupees(silver['per gram'])}
+              </span>
+            </div>
+            <div className="purity-cell purity-cell--emphasis">
+              <span className="purity-cell__label">per तोळा </span>
+              <span className="purity-cell__value">
+                <span className="rupee">₹</span>
+                {formatRupees(silver['per तोळा '])}
               </span>
             </div>
             <div className="purity-cell">
-              <span className="purity-cell__label">Per kg</span>
-              <span className="purity-cell__value purity-cell__value--silver">
+              <span className="purity-cell__label">per kg</span>
+              <span className="purity-cell__value">
                 <span className="rupee">₹</span>
-                {formatRupees(silver.perKg ?? (silver.perGram ? silver.perGram * 1000 : null))}
+                {formatRupees(silver['per kg'])}
               </span>
             </div>
           </div>
