@@ -107,7 +107,7 @@ export default function Home() {
           </h2>
           <div className="purity-grid">
             <div className="purity-cell">
-              <span className="purity-cell__label">24K S</span>
+              <span className="purity-cell__label">99.50</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
                 {formatRupees(gold['24k'])}
@@ -121,7 +121,7 @@ export default function Home() {
               </span>
             </div>
             <div className="purity-cell">
-              <span className="purity-cell__label">20K S</span>
+              <span className="purity-cell__label">84</span>
               <span className="purity-cell__value">
                 <span className="rupee">₹</span>
                 {formatRupees(gold['20k'])}
