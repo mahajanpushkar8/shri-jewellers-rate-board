@@ -161,8 +161,8 @@
 
 .purity-cell__value {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(19px, 5vw, 26px);
+  font-weight: 700;
+  font-size: clamp(21px, 5.5vw, 29px);
   color: var(--maroon-800);
   white-space: nowrap;
 }
