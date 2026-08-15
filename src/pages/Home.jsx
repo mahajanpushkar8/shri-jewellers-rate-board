@@ -83,7 +83,7 @@ export default function Home() {
       </div>
 
       <header className="board-header">
-        <p className="board-header__eyebrow">Est. Trust · Since Generations</p>
+        
         <h1 className="board-header__name">{SHOP_NAME}</h1>
         <p className="board-header__address">{SHOP_ADDRESS}</p>
         <p className="board-header__tagline">Today's Bullion Rate</p>
